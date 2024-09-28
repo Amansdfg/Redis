@@ -1,28 +1,22 @@
 package kz.kalabay.redis.model;
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.redis.core.RedisHash;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-
-@Data
 @Entity
-@RedisHash("Article")
-public class Article {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class  Article{
     @Id
-    private String id;
+    private Long id;
     private String title;
     private String text;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Comment> comments;
-    public Article(String id, String title, String text) {
-        this.id = id;
-        this.title = title;
-        this.text = text;
-    }
-
-    public Article() {
-
-    }
 }
