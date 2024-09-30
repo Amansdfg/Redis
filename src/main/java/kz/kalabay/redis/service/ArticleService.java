@@ -3,7 +3,6 @@ package kz.kalabay.redis.service;
 import kz.kalabay.redis.model.Article;
 import kz.kalabay.redis.model.Comment;
 import kz.kalabay.redis.repository.ArticleRepository;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
